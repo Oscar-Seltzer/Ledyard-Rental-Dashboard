@@ -1,0 +1,97 @@
+.bar {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding: 14px 32px;
+  border-bottom: 1px solid var(--border-subtle);
+  background: var(--bg-panel);
+  position: sticky;
+  top: 64px;
+  z-index: 90;
+}
+
+.barLabel {
+  font-size: 0.7rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--text-muted);
+}
+
+.presets {
+  display: flex;
+  gap: 4px;
+  flex-wrap: wrap;
+}
+
+.preset {
+  font-size: 0.76rem;
+  font-weight: 500;
+  padding: 5px 13px;
+  border-radius: 20px;
+  border: 1px solid var(--border);
+  background: transparent;
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: background 0.13s, color 0.13s, border-color 0.13s;
+  font-family: var(--font-body);
+  white-space: nowrap;
+}
+
+.preset:hover {
+  border-color: var(--accent-light);
+  color: var(--accent);
+  background: var(--accent-glow);
+}
+
+.presetActive {
+  background: var(--accent) !important;
+  border-color: var(--accent) !important;
+  color: var(--text-on-accent) !important;
+}
+
+.customRow {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.dateInput {
+  font-size: 0.76rem;
+  padding: 5px 10px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--bg-card);
+  color: var(--text-primary);
+  font-family: var(--font-mono);
+  cursor: pointer;
+  transition: border-color 0.13s;
+  appearance: none;
+}
+
+.dateInput:focus {
+  outline: none;
+  border-color: var(--accent);
+}
+
+.dash {
+  color: var(--text-muted);
+  font-size: 0.85rem;
+}
+
+.applyBtn {
+  background: var(--accent-glow);
+  border-color: var(--accent-light);
+  color: var(--accent);
+}
+
+.applyBtn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+@media (max-width: 600px) {
+  .bar { padding: 12px 16px; }
+}

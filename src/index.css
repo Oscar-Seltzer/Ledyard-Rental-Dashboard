@@ -1,0 +1,169 @@
+/* =========================================================
+   LEDYARD CANOE CLUB — Design Tokens & Base Reset
+   Palette:
+     --pine:      #1a3a2a  (deep forest green — primary surface dark)
+     --moss:      #2d5a3d  (mid green — cards/hover)
+     --fern:      #4a8c5c  (accent green — interactive)
+     --reed:      #7ab893  (light accent — highlights, badges)
+     --shore:     #f4f7f5  (off-white with green tint — light bg)
+     --fog:       #e8ede9  (subtle panel bg on light)
+     --bark:      #1a2820  (near-black — dark bg)
+     --chalk:     #f9fbf9  (near-white text on dark)
+     --ink:       #1c2b22  (body text on light)
+   ========================================================= */
+
+:root {
+  /* Light theme (default) */
+  --bg:           #f4f7f5;
+  --bg-panel:     #ffffff;
+  --bg-card:      #ffffff;
+  --bg-hover:     #eaf1eb;
+  --border:       #d4e0d6;
+  --border-subtle: #e8ede9;
+
+  --text-primary:   #1c2b22;
+  --text-secondary: #4a6155;
+  --text-muted:     #7a9485;
+  --text-on-accent: #ffffff;
+
+  --accent:        #2d5a3d;
+  --accent-mid:    #4a8c5c;
+  --accent-light:  #7ab893;
+  --accent-pop:    #3a7a52;
+  --accent-glow:   rgba(74, 140, 92, 0.15);
+
+  --forecast-fill: rgba(74, 140, 92, 0.25);
+  --canoe-color:   #2d5a3d;
+  --sup-color:     #4a8c5c;
+  --kayak-color:   #7ab893;
+  --dkayak-color:  #a8d4b8;
+  --combo-color:   #c5e4cf;
+
+  --scrollbar-thumb: #b8cfc0;
+  --shadow-sm: 0 1px 3px rgba(26,58,42,0.08);
+  --shadow-md: 0 4px 16px rgba(26,58,42,0.10);
+  --shadow-lg: 0 8px 32px rgba(26,58,42,0.12);
+
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+
+  --font-display: 'DM Serif Display', Georgia, serif;
+  --font-body:    'Inter', system-ui, sans-serif;
+  --font-mono:    'JetBrains Mono', 'Fira Code', monospace;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg:           #0f1f16;
+    --bg-panel:     #162419;
+    --bg-card:      #1c2f21;
+    --bg-hover:     #223529;
+    --border:       #2a4032;
+    --border-subtle: #1f3028;
+
+    --text-primary:   #e8f2ea;
+    --text-secondary: #9dbfa8;
+    --text-muted:     #6a9278;
+    --text-on-accent: #f0faf2;
+
+    --accent:        #4a8c5c;
+    --accent-mid:    #5da872;
+    --accent-light:  #7ab893;
+    --accent-pop:    #62b87c;
+    --accent-glow:   rgba(74, 140, 92, 0.18);
+
+    --forecast-fill: rgba(74, 140, 92, 0.20);
+    --canoe-color:   #4a8c5c;
+    --sup-color:     #6aab7c;
+    --kayak-color:   #8ac49a;
+    --dkayak-color:  #a8d4b8;
+    --combo-color:   #c0dfc9;
+
+    --scrollbar-thumb: #2d5a3d;
+    --shadow-sm: 0 1px 3px rgba(0,0,0,0.3);
+    --shadow-md: 0 4px 16px rgba(0,0,0,0.35);
+    --shadow-lg: 0 8px 32px rgba(0,0,0,0.40);
+  }
+}
+
+:root[data-theme="dark"] {
+  --bg:           #0f1f16;
+  --bg-panel:     #162419;
+  --bg-card:      #1c2f21;
+  --bg-hover:     #223529;
+  --border:       #2a4032;
+  --border-subtle: #1f3028;
+
+  --text-primary:   #e8f2ea;
+  --text-secondary: #9dbfa8;
+  --text-muted:     #6a9278;
+  --text-on-accent: #f0faf2;
+
+  --accent:        #4a8c5c;
+  --accent-mid:    #5da872;
+  --accent-light:  #7ab893;
+  --accent-pop:    #62b87c;
+  --accent-glow:   rgba(74, 140, 92, 0.18);
+
+  --forecast-fill: rgba(74, 140, 92, 0.20);
+  --canoe-color:   #4a8c5c;
+  --sup-color:     #6aab7c;
+  --kayak-color:   #8ac49a;
+  --dkayak-color:  #a8d4b8;
+  --combo-color:   #c0dfc9;
+
+  --scrollbar-thumb: #2d5a3d;
+  --shadow-sm: 0 1px 3px rgba(0,0,0,0.3);
+  --shadow-md: 0 4px 16px rgba(0,0,0,0.35);
+  --shadow-lg: 0 8px 32px rgba(0,0,0,0.40);
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  font-family: var(--font-body);
+  background: var(--bg);
+  color: var(--text-primary);
+  min-height: 100vh;
+  font-size: 15px;
+  line-height: 1.6;
+  transition: background 0.2s, color 0.2s;
+}
+
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: var(--scrollbar-thumb); border-radius: 3px; }
+
+button, select, input {
+  font-family: var(--font-body);
+}
+
+/* ── Scroll-entrance animation ── */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(14px); }
+  to   { opacity: 1; transform: translateY(0);    }
+}
+
+.fade-up {
+  animation: fadeUp 0.45s ease both;
+}
+
+/* staggered children */
+.fade-up:nth-child(1) { animation-delay: 0.05s; }
+.fade-up:nth-child(2) { animation-delay: 0.10s; }
+.fade-up:nth-child(3) { animation-delay: 0.15s; }
+.fade-up:nth-child(4) { animation-delay: 0.20s; }
+.fade-up:nth-child(5) { animation-delay: 0.25s; }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}

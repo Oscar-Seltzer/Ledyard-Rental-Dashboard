@@ -1,0 +1,18 @@
+# Dependencies & environments
+node_modules/
+venv/
+.venv/
+env/
+__pycache__/
+*.pyc
+
+# Build outputs & caches
+dist/
+build/
+.next/
+.cache/
+
+# Local & OS files
+.env
+.env.local
+.DS_Store

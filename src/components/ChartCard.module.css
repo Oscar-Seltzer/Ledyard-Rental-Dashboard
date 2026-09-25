@@ -1,0 +1,254 @@
+/* Shared card shell + shared UI atoms used by all chart components */
+
+.card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  padding: 24px;
+  box-shadow: var(--shadow-sm);
+  transition: box-shadow 0.15s;
+}
+
+.card:hover {
+  box-shadow: var(--shadow-md);
+}
+
+.cardHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.cardTitle {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  font-weight: 400;
+  color: var(--text-primary);
+  letter-spacing: -0.01em;
+  font-style: italic;
+}
+
+.cardMeta {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  font-family: var(--font-mono);
+}
+
+/* ── tab group ── */
+.tabs {
+  display: flex;
+  background: var(--bg-hover);
+  border-radius: 8px;
+  padding: 3px;
+  gap: 2px;
+}
+
+.tab {
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: var(--text-muted);
+  background: transparent;
+  border: none;
+  border-radius: 6px;
+  padding: 5px 12px;
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s;
+  white-space: nowrap;
+}
+
+.tab:hover {
+  color: var(--text-secondary);
+  background: var(--bg-panel);
+}
+
+.tabActive {
+  background: var(--accent) !important;
+  color: var(--text-on-accent) !important;
+}
+
+.tabActive:hover {
+  background: var(--accent-pop) !important;
+}
+
+/* ── tooltip ── */
+.tooltip {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 10px 14px;
+  box-shadow: var(--shadow-md);
+  min-width: 140px;
+  font-size: 13px;
+}
+
+.tooltipLabel {
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 6px;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.tooltipRow {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 3px;
+  color: var(--text-secondary);
+}
+
+.tooltipDot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.tooltipVal {
+  margin-left: auto;
+  font-family: var(--font-mono);
+  font-weight: 500;
+  color: var(--text-primary);
+  font-variant-numeric: tabular-nums;
+}
+
+/* ── chart wrap ── */
+.chartWrap {
+  overflow-x: auto;
+}
+
+/* ── forecast note ── */
+.forecastNote {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.73rem;
+  color: var(--text-muted);
+  margin-bottom: 8px;
+}
+
+.forecastDot {
+  display: inline-block;
+  width: 24px;
+  height: 2px;
+  background: repeating-linear-gradient(90deg, var(--accent-light) 0, var(--accent-light) 5px, transparent 5px, transparent 9px);
+  flex-shrink: 0;
+}
+
+/* ── split layout (boat breakdown) ── */
+.splitLayout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  align-items: start;
+}
+
+@media (max-width: 700px) {
+  .splitLayout { grid-template-columns: 1fr; }
+}
+
+.pieWrap {}
+.barWrap {}
+
+.barTitle {
+  font-size: 0.72rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--text-muted);
+  margin-bottom: 12px;
+}
+
+/* ── pie legend ── */
+.pieLegend {
+  margin-top: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.pieLegendRow {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.8rem;
+}
+
+.pieLegendDot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.pieLegendLabel {
+  color: var(--text-secondary);
+  flex: 1;
+  font-size: 0.78rem;
+}
+
+.pieLegendVal {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  color: var(--text-primary);
+  font-variant-numeric: tabular-nums;
+}
+
+/* ── two-chart layout (time of day) ── */
+.twoCharts {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 28px;
+}
+
+@media (max-width: 700px) {
+  .twoCharts { grid-template-columns: 1fr; }
+}
+
+.subTitle {
+  font-size: 0.72rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--text-muted);
+  margin-bottom: 10px;
+}
+
+/* ── duration insights row ── */
+.insightRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 16px;
+}
+
+.insightChip {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  background: var(--bg-hover);
+  border-radius: 20px;
+  padding: 4px 10px;
+  font-size: 0.73rem;
+}
+
+.insightDot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.insightLabel {
+  color: var(--text-secondary);
+}
+
+.insightPct {
+  font-family: var(--font-mono);
+  font-weight: 500;
+  color: var(--text-primary);
+}

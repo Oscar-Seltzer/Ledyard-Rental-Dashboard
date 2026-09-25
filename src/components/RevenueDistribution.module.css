@@ -1,0 +1,60 @@
+.statRow {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+  margin-top: 14px;
+  padding-top: 14px;
+  border-top: 1px solid var(--border-subtle);
+}
+
+.statCell {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  background: var(--bg-hover);
+  border-radius: 8px;
+  padding: 5px 10px;
+  flex: 1;
+  min-width: 80px;
+}
+
+.statDot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.statLabel {
+  font-size: 0.68rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  color: var(--text-muted);
+  white-space: nowrap;
+}
+
+.statVal {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--text-primary);
+  font-variant-numeric: tabular-nums;
+  margin-left: auto;
+}
+
+.callout {
+  margin-top: 12px;
+  padding: 10px 12px;
+  background: var(--accent-glow);
+  border-radius: 8px;
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  line-height: 1.5;
+  border: 1px solid rgba(74,140,92,0.15);
+}
+
+.callout strong {
+  color: var(--accent);
+  font-weight: 600;
+}

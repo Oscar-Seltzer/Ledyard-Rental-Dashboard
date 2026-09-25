@@ -1,0 +1,179 @@
+.card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  padding: 24px;
+  box-shadow: var(--shadow-sm);
+  transition: box-shadow 0.15s;
+}
+
+.card:hover {
+  box-shadow: var(--shadow-md);
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 6px;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.title {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  font-weight: 400;
+  font-style: italic;
+  color: var(--text-primary);
+  letter-spacing: -0.01em;
+}
+
+.subtitle {
+  font-size: 0.74rem;
+  color: var(--text-muted);
+  margin-bottom: 16px;
+}
+
+/* ── tab group ── */
+.tabs {
+  display: flex;
+  background: var(--bg-hover);
+  border-radius: 8px;
+  padding: 3px;
+  gap: 2px;
+}
+
+.tab {
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: var(--text-muted);
+  background: transparent;
+  border: none;
+  border-radius: 6px;
+  padding: 5px 12px;
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s;
+  white-space: nowrap;
+  font-family: var(--font-body);
+}
+
+.tab:hover { color: var(--text-secondary); background: var(--bg-panel); }
+.tabActive  { background: var(--accent) !important; color: var(--text-on-accent) !important; }
+.tabActive:hover { background: var(--accent-pop) !important; }
+
+/* ── Grid ── */
+.wrap {
+  overflow-x: auto;
+}
+
+.axisRow,
+.row,
+.totalRow {
+  display: grid;
+  grid-template-columns: 36px repeat(12, 1fr);
+  gap: 3px;
+  margin-bottom: 3px;
+}
+
+.axisCorner { /* empty */ }
+
+.hourLabel {
+  font-size: 0.62rem;
+  color: var(--text-muted);
+  text-align: center;
+  font-family: var(--font-mono);
+  line-height: 1;
+  padding-bottom: 4px;
+}
+
+.dayLabel {
+  font-size: 0.7rem;
+  font-weight: 500;
+  color: var(--text-muted);
+  display: flex;
+  align-items: center;
+  padding-right: 4px;
+}
+
+.cell {
+  height: 28px;
+  border-radius: 4px;
+  background: var(--bg-hover);
+  cursor: default;
+  transition: transform 0.1s;
+}
+
+.cellActive {
+  background-color: var(--accent);
+  opacity: calc(0.1 + var(--ratio) * 0.9);
+  cursor: pointer;
+}
+
+.cellActive:hover {
+  transform: scale(1.12);
+  opacity: 1;
+}
+
+/* ── Column totals (mini bar below) ── */
+.totalLabel {
+  font-size: 0.62rem;
+  color: var(--text-muted);
+  display: flex;
+  align-items: flex-end;
+  padding-right: 4px;
+  padding-top: 4px;
+}
+
+.totalCell {
+  height: 20px;
+  display: flex;
+  align-items: flex-end;
+  padding-top: 4px;
+}
+
+.totalBar {
+  width: 100%;
+  border-radius: 2px 2px 0 0;
+  background: var(--accent-light);
+  opacity: 0.5;
+  min-height: 1px;
+}
+
+/* ── Legend ── */
+.legend {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  margin-top: 14px;
+}
+
+.legendLabel {
+  font-size: 0.68rem;
+  color: var(--text-muted);
+}
+
+.legendSwatch {
+  width: 20px;
+  height: 14px;
+  border-radius: 3px;
+  background-color: var(--accent);
+  opacity: calc(0.1 + var(--ratio) * 0.9);
+}
+
+/* ── Tooltip ── */
+.tooltipStatic {
+  margin-top: 14px;
+  padding: 8px 12px;
+  background: var(--bg-hover);
+  border-radius: 8px;
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  font-family: var(--font-mono);
+  border: 1px solid var(--border-subtle);
+  min-height: 34px;
+}
+
+.tooltipStatic strong {
+  color: var(--text-primary);
+}
