@@ -70,10 +70,13 @@ export async function loadData(dateFilter = null) {
       skipEmptyLines: true,
       complete(results) {
         try {
-          const raw = results.data.map(row => {
-            const issuedAt    = row['Issued At']    ? new Date(row['Issued At'])    : null
-            const completedAt = row['Completed At'] ? new Date(row['Completed At']) : null
-            const revenue     = parseFloat(String(row['Adjusted total']).replace(/[$,]/g, ''))
+          const raw = results.data
+            .filter(row => row['Issued At'] && row['Completed At'] && !isNaN(new Date(row['Issued At'])))
+            .map(row => {
+              const issuedAt    = new Date(row['Issued At'])
+              const completedAt = new Date(row['Completed At'])
+              const rawRev      = row['Adjusted Rate'] ?? row['Adjusted total'] ?? 0
+              const revenue     = parseFloat(String(rawRev).replace(/[$,]/g, '')) || 0
             const durationHrs = (issuedAt && completedAt)
               ? (completedAt - issuedAt) / 3_600_000
               : null
